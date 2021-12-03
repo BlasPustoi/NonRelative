@@ -10,3 +10,15 @@ F:\repos\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
 F:\repos\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 F:\repos\DAL\obj\Debug\DAL.dll
 F:\repos\DAL\obj\Debug\DAL.pdb
+C:\Users\User\Desktop\New folder\DAL\bin\Debug\DAL.dll
+C:\Users\User\Desktop\New folder\DAL\bin\Debug\DAL.pdb
+C:\Users\User\Desktop\New folder\DAL\bin\Debug\AWSSDK.Core.dll
+C:\Users\User\Desktop\New folder\DAL\bin\Debug\AWSSDK.DynamoDBv2.dll
+C:\Users\User\Desktop\New folder\DAL\bin\Debug\AWSSDK.Core.pdb
+C:\Users\User\Desktop\New folder\DAL\bin\Debug\AWSSDK.Core.xml
+C:\Users\User\Desktop\New folder\DAL\bin\Debug\AWSSDK.DynamoDBv2.pdb
+C:\Users\User\Desktop\New folder\DAL\bin\Debug\AWSSDK.DynamoDBv2.xml
+C:\Users\User\Desktop\New folder\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\New folder\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\New folder\DAL\obj\Debug\DAL.dll
+C:\Users\User\Desktop\New folder\DAL\obj\Debug\DAL.pdb

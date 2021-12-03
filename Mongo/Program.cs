@@ -1,20 +1,12 @@
 ﻿using System;
 using System.Linq;
-using System.Text;
 using MongoDB.Bson;
 using MongoDB.Driver;
-using MongoDB.Driver.Linq;
 using MongoDB.Bson.Serialization.Attributes;
 using System.Collections.Generic;
-using System.Threading;
 using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
-using System.Threading.Tasks;
-using System.Net.Sockets;
-using System.Net.NetworkInformation;
-using System.Net;
-using DAL;
 namespace Mongo
 {
     [BsonIgnoreExtraElements]
@@ -68,13 +60,12 @@ namespace Mongo
     class Program
     {
         private static AmazonDynamoDBClient Client;
-        public static Table moviesTable;
+        public static Table TestTable;
 
 
         static void Main(string[] args)
         {
             Program.Client = DAL.DynamoDBDAL.createClient(true);
-            DAL.DynamoDBDAL.createClient(true);
             var request = new CreateTableRequest
             {
                 AttributeDefinitions = new List<AttributeDefinition>
@@ -110,8 +101,6 @@ namespace Mongo
                 },
                 TableName="JustCreateTable"
             };
-            Program.Client.CreateTable(request);
-            moviesTable = Table.LoadTable(Program.Client, "JustCreateTable");
             
             // MONGO PART //
 
@@ -186,6 +175,8 @@ namespace Mongo
                         break;
                 }
             }
+            Program.Client.CreateTable(request);
+            TestTable = Table.LoadTable(Program.Client, "JustCreateTable");
             while (true)
             {
                 Console.WriteLine("Type 1 to add a post");
@@ -196,6 +187,9 @@ namespace Mongo
                 Console.WriteLine("Type 6 to add all posts to DynamoDB database");
                 Console.WriteLine("Type 7 to show all posts in DynamoDB database");
                 Console.WriteLine("Type 8 to update a post in DynamoDB database");
+                Console.WriteLine("Type 9 to Delete Current DynamoDB Table");
+                Console.WriteLine("Type 10 to regenerate table");
+
 
                 int choice = Int32.Parse(Console.ReadLine());
                 Console.Clear();
@@ -338,8 +332,8 @@ namespace Mongo
                                 newItemDocument["Date"] = resultPost[i].Date.ToString();
                                 newItemDocument["Likes"] = resultPost[i].likes;
                                 newItemDocument["Comments"] = resultPost[i].Comment.ToJson();
-                                DAL.DynamoDBDAL.WritingNewMovie_async(newItemDocument,moviesTable).Wait();
-                                DAL.DynamoDBDAL.ReadingMovie_async(resultPost[i].Id.ToString(), resultPost[i].title, true,moviesTable).Wait();
+                                DAL.DynamoDBDAL.WritingNewMovie_async(newItemDocument,TestTable).Wait();
+                                DAL.DynamoDBDAL.ReadingMovie_async(resultPost[i].Id.ToString(), resultPost[i].title, true,TestTable).Wait();
                             }
                             break;
                         }
@@ -395,7 +389,7 @@ namespace Mongo
                                             };
 
                                             Program.Client.UpdateItem(req);
-                                            DAL.DynamoDBDAL.ReadingMovie_async(resultPost[0].Id.ToString(), resultPost[0].title, true, moviesTable).Wait();
+                                            DAL.DynamoDBDAL.ReadingMovie_async(resultPost[0].Id.ToString(), resultPost[0].title, true, TestTable).Wait();
                                             break;
                                         }
                                     case "2":
@@ -416,7 +410,7 @@ namespace Mongo
                                             };
 
                                             Program.Client.UpdateItem(req);
-                                            DAL.DynamoDBDAL.ReadingMovie_async(resultPost[0].Id.ToString(), resultPost[0].title, true, moviesTable).Wait();
+                                            DAL.DynamoDBDAL.ReadingMovie_async(resultPost[0].Id.ToString(), resultPost[0].title, true, TestTable).Wait();
                                             break;
                                         }
                                     case "3":
@@ -437,7 +431,7 @@ namespace Mongo
                                             };
 
                                             Program.Client.UpdateItem(req);
-                                            DAL.DynamoDBDAL.ReadingMovie_async(resultPost[0].Id.ToString(), resultPost[0].title, true, moviesTable).Wait();
+                                            DAL.DynamoDBDAL.ReadingMovie_async(resultPost[0].Id.ToString(), resultPost[0].title, true, TestTable).Wait();
                                             break;
                                         }
                                     case "4":
@@ -458,7 +452,7 @@ namespace Mongo
                                             };
 
                                             Program.Client.UpdateItem(req);
-                                            DAL.DynamoDBDAL.ReadingMovie_async(resultPost[0].Id.ToString(), resultPost[0].title, true, moviesTable).Wait();
+                                            DAL.DynamoDBDAL.ReadingMovie_async(resultPost[0].Id.ToString(), resultPost[0].title, true, TestTable).Wait();
                                             break;
                                         }
                                 }
@@ -466,6 +460,16 @@ namespace Mongo
                             }
                             break;
                         }
+                    case 9:
+                        {   
+                            DAL.DynamoDBDAL.DeletingTable_async("JustCreateTable").Wait(); }
+                        break;
+                    case 10:
+                        {
+                            Program.Client.CreateTable(request);
+                            TestTable = Table.LoadTable(Program.Client, "JustCreateTable");
+                        }
+                        break;
 
                 }
             }

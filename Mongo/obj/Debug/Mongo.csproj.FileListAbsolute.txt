@@ -33,3 +33,38 @@ F:\repos\Mongo\bin\Debug\AWSSDK.DynamoDBv2.pdb
 F:\repos\Mongo\bin\Debug\AWSSDK.DynamoDBv2.xml
 F:\repos\Mongo\bin\Debug\DAL.dll
 F:\repos\Mongo\bin\Debug\DAL.pdb
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\snappy32.dll
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\snappy64.dll
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\libzstd.dll
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\mongocrypt.dll
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\Mongo.exe.config
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\Mongo.exe
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\Mongo.pdb
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\AWSSDK.Core.dll
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\AWSSDK.DynamoDBv2.dll
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\DAL.dll
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\DnsClient.dll
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\MongoDB.Bson.dll
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\MongoDB.Driver.Core.dll
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\MongoDB.Driver.dll
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\MongoDB.Libmongocrypt.dll
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\SharpCompress.dll
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\System.Buffers.dll
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\System.ValueTuple.dll
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\DAL.pdb
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\AWSSDK.Core.pdb
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\AWSSDK.Core.xml
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\AWSSDK.DynamoDBv2.pdb
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\AWSSDK.DynamoDBv2.xml
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\DnsClient.xml
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\MongoDB.Bson.xml
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\MongoDB.Driver.xml
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\MongoDB.Driver.Core.xml
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\System.Buffers.xml
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\User\Desktop\New folder\Mongo\bin\Debug\System.ValueTuple.xml
+C:\Users\User\Desktop\New folder\Mongo\obj\Debug\Mongo.csproj.AssemblyReference.cache
+C:\Users\User\Desktop\New folder\Mongo\obj\Debug\Mongo.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\New folder\Mongo\obj\Debug\Mongo.exe
+C:\Users\User\Desktop\New folder\Mongo\obj\Debug\Mongo.pdb

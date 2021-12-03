@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Linq;
-using System.Text;
-using System.Collections.Generic;
 using System.Threading;
 using Amazon.DynamoDBv2;
-using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
 using System.Threading.Tasks;
-using System.Net.Sockets;
 using System.Net.NetworkInformation;
 using System.Net;
 
@@ -23,7 +18,26 @@ namespace DAL
         private static AmazonDynamoDBClient Client;
         public static CancellationTokenSource source = new CancellationTokenSource();
         public static CancellationToken token = source.Token;
-        public static Document movie_record;
+        public static Document TableRecord;
+        public static async Task<bool> DeletingTable_async(string tableName)
+        {
+            operationSucceeded = false;
+            operationFailed = false;
+            Task tblDelete = Client.DeleteTableAsync(tableName);
+            try
+            {
+                await tblDelete;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("     ERROR: Failed to delete the table, because:\n            " + ex.Message);
+                operationFailed = true;
+                return (false);
+            }
+            Console.WriteLine("     -- Successfully deleted the table!");
+            operationSucceeded = true;
+            return (true);
+        }
         public static async Task<bool> ReadingMovie_async(string year, string title, bool report, Table moviesTable)
         {
             Primitive hash = new Primitive(year, false);
@@ -36,8 +50,8 @@ namespace DAL
                 Task<Document> readMovie = moviesTable.GetItemAsync(hash, range, token);
                 if (report)
                     Console.WriteLine("  -- Reading the {0} movie \"{1}\" from the Movies table...", year, title);
-                movie_record = await readMovie;
-                if (movie_record == null)
+                TableRecord = await readMovie;
+                if (TableRecord == null)
                 {
                     if (report)
                         Console.WriteLine("     -- Sorry, that movie isn't in the Movies table.");
@@ -47,7 +61,7 @@ namespace DAL
                 {
                     if (report)
                         Console.WriteLine("     -- Found it!  The movie record looks like this:\n" +
-                                            movie_record.ToJsonPretty());
+                                            TableRecord.ToJsonPretty());
                     operationSucceeded = true;
                     return (true);
                 }
@@ -109,7 +123,6 @@ namespace DAL
                     return (null);
                 }
 
-                // DynamoDB-Local is running, so create a client
                 Console.WriteLine("  -- Setting up a DynamoDB-Local client (DynamoDB Local seems to be running)");
                 AmazonDynamoDBConfig ddbConfig = new AmazonDynamoDBConfig();
                 ddbConfig.ServiceURL = EndpointUrl;
