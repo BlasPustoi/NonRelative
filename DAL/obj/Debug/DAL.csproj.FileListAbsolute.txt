@@ -1,0 +1,12 @@
+F:\repos\DAL\bin\Debug\DAL.dll
+F:\repos\DAL\bin\Debug\DAL.pdb
+F:\repos\DAL\bin\Debug\AWSSDK.Core.dll
+F:\repos\DAL\bin\Debug\AWSSDK.DynamoDBv2.dll
+F:\repos\DAL\bin\Debug\AWSSDK.Core.pdb
+F:\repos\DAL\bin\Debug\AWSSDK.Core.xml
+F:\repos\DAL\bin\Debug\AWSSDK.DynamoDBv2.pdb
+F:\repos\DAL\bin\Debug\AWSSDK.DynamoDBv2.xml
+F:\repos\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+F:\repos\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+F:\repos\DAL\obj\Debug\DAL.dll
+F:\repos\DAL\obj\Debug\DAL.pdb
